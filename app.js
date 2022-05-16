@@ -1,29 +1,50 @@
 (function () {
-    const buttton = document.getElementById('button');
+    const button = document.getElementById('button');
     const textarea = document.getElementById('ta');
-    let current=document.getElementById('current');
+    let current = document.getElementById('current');
     var msg = new SpeechSynthesisUtterance();
     var synth = window.speechSynthesis;
-    buttton.addEventListener('click', (e) => {
+    button.addEventListener('click', (e) => {
         e.preventDefault();
         msg.pitch = 1.2;
         msg.rate = 1.3;
-        msg.text = textarea.value;
         msg.volume = 1;
+        if (textarea.value.trim() !== '') {
+            msg.text = textarea.value;
+            current.style.display = 'block'
+        } else {
+            current.style.display = 'none'
+        }
+
         window.speechSynthesis.cancel();
-        current.style.display='block'
+
         if (synth.getVoices()[1]) {
             msg.voice = synth.getVoices()[1];
             synth.speak(msg);
-            current.innerText=textarea.value;
-            msg.text = ''
-            textarea.value = ''
+
         }
         else {
             window.speechSynthesis.speak(msg);
-            current.innerText=textarea.value;
-            msg.text = ''
-            textarea.value = ''
+
         }
+        current.innerText = textarea.value;
+        msg.text = ''
+        textarea.value = ''
+
     })
+
+    let countEnters = 0;
+
+    textarea.addEventListener("keyup", (e) => {
+        e.preventDefault();
+        if (e.key === 'Enter') {
+            countEnters++;
+            if (countEnters > 3) {
+                button.click()
+                countEnters = 0;
+            }
+        }
+    });
+
+
 })()

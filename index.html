@@ -8,7 +8,7 @@
     <title>My TTS</title>
     <style>
         body {
-            background-color: darkslategray;
+            background-color: rgb(115, 49, 238);
         }
 
         #form {
@@ -25,6 +25,9 @@
             right: 0;
             margin: auto;
 
+            border-radius: 5px;
+            font-size: 1.2rem;
+
         }
 
         #button {
@@ -34,11 +37,14 @@
             right: 0;
             margin: auto;
             margin-top: 1em;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 700;
         }
 
         h1 {
             text-decoration: underline;
-            color: deepskyblue;
+            color: rgb(49, 203, 254);
         }
 
         #current {
@@ -51,6 +57,8 @@
             right: 0;
             margin: auto;
             margin-top: 1em;
+            border-radius: 5px;
+            font-size: large;
         }
     </style>
 </head>
@@ -59,7 +67,7 @@
     <h1>My TTS</h1>
     <form action="" id="form">
         <textarea name="text" id="ta" cols="30" rows="10"></textarea>
-        <button id="button">submit</button>
+        <button id="button">Submit</button>
     </form>
     <article>
         <p id="current"></p>
