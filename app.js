@@ -39,10 +39,13 @@
         e.preventDefault();
         if (e.key === 'Enter') {
             countEnters++;
+
             if (countEnters > 3) {
                 button.click()
                 countEnters = 0;
             }
+        } else {
+            countEnters = 0
         }
     });
 
