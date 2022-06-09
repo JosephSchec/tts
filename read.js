@@ -1,5 +1,5 @@
 (function () {
-    const button = document.getElementById('button');
+    const button = document.getElementById('read');
     const textarea = document.getElementById('ta');
     let current = document.getElementById('current');
     var msg = new SpeechSynthesisUtterance();
