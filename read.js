@@ -7,7 +7,7 @@
     button.addEventListener('click', (e) => {
         e.preventDefault();
         msg.pitch = .3;
-        msg.rate =2.95;
+        msg.rate =3.95;
         msg.volume = 3.5;
         if (textarea.value.trim() !== '') {
             msg.text = textarea.value;
