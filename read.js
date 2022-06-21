@@ -6,9 +6,9 @@
     var synth = window.speechSynthesis;
     button.addEventListener('click', (e) => {
         e.preventDefault();
-        msg.pitch = 1.2;
-        msg.rate = 1.3;
-        msg.volume = 1;
+        msg.pitch = .3;
+        msg.rate =2.95;
+        msg.volume = 3.5;
         if (textarea.value.trim() !== '') {
             msg.text = textarea.value;
             current.style.display = 'block'
